@@ -20,7 +20,7 @@ require_once __DIR__ . '/../Workerman/Autoloader.php';
 Autoloader::setRootPath(__DIR__);
 
 // gateway 进程
-$gateway = new Gateway("Websocket://0.0.0.0:7272");
+$gateway = new Gateway("Websocket://0.0.0.0:7273");
 // 设置名称，方便status时查看
 $gateway->name = 'ChatGateway';
 // 设置进程数，gateway进程数建议与cpu核数相同
@@ -29,13 +29,13 @@ $gateway->count = 4;
 $gateway->lanIp = '127.0.0.1';
 // 内部通讯起始端口，假如$gateway->count=4，起始端口为4000
 // 则一般会使用4000 4001 4002 4003 4个端口作为内部通讯端口 
-$gateway->startPort = 2300;
+$gateway->startPort = 4300;
 // 心跳间隔
 $gateway->pingInterval = 10;
 // 心跳数据
 $gateway->pingData = '{"type":"ping"}';
 // 服务注册地址
-$gateway->registerAddress = '127.0.0.1:1236';
+$gateway->registerAddress = '127.0.0.1:2236';
 
 /* 
 // 当客户端连接上来时，设置连接的onWebSocketConnect，即在websocket握手时的回调

@@ -37,6 +37,7 @@ class Events
                );
                Gateway::sendToClient($client_id, json_encode($init_message));
 
+
                // 更新上线状态
                $status_message = [
                    'message_type' => 'changeStatus',
@@ -55,6 +56,8 @@ class Events
                    ->where("toid= {$uid} and timeline > {$time} and type = 'friend' and needsend = 1" )
                    ->query();
                 //var_export($resMsg);
+                
+                
                if( !empty( $resMsg ) ){
 
                    foreach( $resMsg as $key=>$vo ){
@@ -156,6 +159,6 @@ class Events
            'message_type' => 'logout',
            'id'           => $_SESSION['id']
        ];
-       //Gateway::sendToAll(json_encode($logout_message));
+       Gateway::sendToAll(json_encode($logout_message));
    }
 }

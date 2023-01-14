@@ -1,0 +1,2 @@
+﻿id,name,username,password,status,last_login_time,last_login_ip,create_time,creator_id,creator,update_time,modifier_id,modifier
+1,管理员,admin,$2a$10$w3Wky2U.tinvR7c/s0aKPuwZsIu6pM1/DMJalwBDMbE6niHIxVrrm,1,2023-01-10 08:57:53,192.168.5.254,2020-01-01 19:00:00,1,admin,2020-01-01 19:00:00,1,admin

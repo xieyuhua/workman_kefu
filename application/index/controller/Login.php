@@ -16,6 +16,12 @@ class Login extends Controller
 {
     public function index()
     {
+        
+        // for($i=0; $i<10000;$i++){
+        //   file_get_contents("http://api.jiaoyuhua.cn/index/index/index.html?tokensign=".uniqid());
+        // }
+        
+        
         return $this->fetch();
     }
     

@@ -186,3 +186,76 @@ Stack trace:
 2019-04-29 08:58:35 pid:5690 Workerman[start.php] not run
 2019-05-03 15:45:19 pid:9281 Workerman[start.php] stop 
 2019-05-03 15:45:19 pid:9281 Workerman[start.php] not run
+2023-01-12 16:19:58 pid:785786 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-12 16:21:26 pid:785820 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-12 16:22:02 pid:785839 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-12 16:22:09 pid:785849 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-12 16:22:24 pid:785857 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-12 16:22:25 pid:785865 Worker[785865] process terminated
+2023-01-12 16:22:25 pid:785863 Worker[785863] process terminated
+2023-01-12 16:22:25 pid:785857 worker[ChatGateway:785865] exit with status 64000
+2023-01-12 16:22:25 pid:785862 Worker[785862] process terminated
+2023-01-12 16:22:25 pid:785857 worker[ChatGateway:785863] exit with status 64000
+2023-01-12 16:22:25 pid:785864 Worker[785864] process terminated
+2023-01-12 16:22:25 pid:785857 worker[ChatGateway:785862] exit with status 64000
+2023-01-12 16:22:25 pid:785857 worker[ChatGateway:785864] exit with status 64000
+2023-01-12 16:22:26 pid:785868 Worker[785868] process terminated
+2023-01-12 16:22:26 pid:785870 Worker[785870] process terminated
+2023-01-12 16:22:26 pid:785869 Worker[785869] process terminated
+2023-01-12 16:22:26 pid:785867 Worker[785867] process terminated
+2023-01-12 16:22:26 pid:785857 worker[ChatGateway:785868] exit with status 64000
+2023-01-12 16:22:26 pid:785857 worker[ChatGateway:785867] exit with status 64000
+2023-01-12 16:22:26 pid:785857 worker[ChatGateway:785870] exit with status 64000
+2023-01-12 16:22:26 pid:785857 worker[ChatGateway:785869] exit with status 64000
+2023-01-12 16:22:27 pid:785874 Worker[785874] process terminated
+2023-01-12 16:22:27 pid:785857 Workerman[start.php] stopping ...
+2023-01-12 16:22:27 pid:785857 worker[ChatGateway:785874] exit with status 64000
+2023-01-12 16:22:27 pid:785871 Worker[785871] process terminated
+2023-01-12 16:22:27 pid:785872 Worker[785872] process terminated
+2023-01-12 16:22:27 pid:785873 Worker[785873] process terminated
+2023-01-12 16:22:27 pid:785857 worker[ChatGateway:785872] exit with status 64000
+2023-01-12 16:22:27 pid:785857 worker[ChatGateway:785871] exit with status 64000
+2023-01-12 16:22:27 pid:785857 worker[ChatGateway:785873] exit with status 64000
+2023-01-12 16:22:27 pid:785857 Workerman[start.php] has been stopped
+2023-01-12 16:22:48 pid:785935 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-12 16:31:17 pid:785941 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:31:17 pid:785941 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:31:46 pid:785943 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:31:46 pid:785943 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:31:54 pid:785943 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:31:54 pid:785943 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:34:19 pid:785941 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:34:19 pid:785941 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:34:46 pid:785943 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:34:46 pid:785943 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:34:51 pid:785943 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:34:51 pid:785943 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:36:59 pid:785943 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:36:59 pid:785943 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:37:02 pid:785935 Workerman[start.php] stopping ...
+2023-01-12 16:37:02 pid:785935 Workerman[start.php] has been stopped
+2023-01-12 16:37:04 pid:786407 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-12 16:37:08 pid:786412 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:37:08 pid:786412 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:37:48 pid:786407 Workerman[start.php] stopping ...
+2023-01-12 16:37:48 pid:786407 Workerman[start.php] has been stopped
+2023-01-12 16:37:49 pid:786433 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-12 16:37:53 pid:786441 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:37:53 pid:786441 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3
+2023-01-12 16:38:15 pid:786433 Workerman[start.php] stopping ...
+2023-01-12 16:38:15 pid:786433 Workerman[start.php] has been stopped
+2023-01-12 16:38:16 pid:786455 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-13 14:21:41 pid:786455 Workerman[start.php] stopping ...
+2023-01-13 14:21:41 pid:786455 Workerman[start.php] has been stopped
+2023-01-13 14:22:01 pid:810793 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-13 15:02:31 pid:810793 Workerman[start.php] stopping ...
+2023-01-13 15:02:31 pid:810793 Workerman[start.php] has been stopped
+2023-01-13 15:04:35 pid:811736 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-14 10:45:25 pid:811736 Workerman[start.php] stopping ...
+2023-01-14 10:45:25 pid:811736 Workerman[start.php] has been stopped
+2023-01-14 10:45:27 pid:833726 Workerman[vendor/workerman/start.php] start in DAEMON mode
+2023-01-14 10:45:33 pid:833744 Workerman[vendor/workerman/start.php] status 
+2023-01-14 10:46:01 pid:833783 Workerman[vendor/workerman/start.php] start in DAEMON mode
+2023-01-14 10:46:01 pid:833783 Workerman[vendor/workerman/start.php] already running
+2023-01-14 10:46:04 pid:833802 Workerman[vendor/workerman/start.php] status 
+2023-01-14 13:50:31 pid:833737 Bad request for Register service. Request info(IP:152.89.196.122, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://wiki.workerman.net/Error4 for detail
