@@ -32,6 +32,80 @@ class Index extends Controller
         $this->admin_img = '/static/admin/images/a5.jpg';
 	}
 	
+    //对话列表
+    public function getchat()
+    {
+        $kefu_id = input('kefu_id',1);
+        
+        $result = db('chatlog')->field("*")->where("toid={$kefu_id} and type='friend' and needsend=0 and id IN (SELECT MAX(id) FROM after_chatlog GROUP BY fromid)")
+            ->order('id desc')
+            ->select();
+
+        if( empty($result) ){
+            return json( ['code' => 1, 'data' => ''] );
+        }   
+        $data = [];
+        foreach ($result as $vo){
+            
+            $temp['content'] = $vo['content'];
+            $temp['last_timestamp'] = $vo['timeline'];
+            $temp['state']   =  'offline';
+            $temp['c_count'] =  'readed';
+            $temp['channel'] =  '663663230323066383932';
+            $temp['visiter_name'] = $vo['fromname'];
+            $temp['visiter_id'] = $vo['fromid'];
+            $temp['vid'] = $vo['id'];
+            $temp['from_url'] =  'web';
+            $temp['ip'] =  '39.191.197.117';
+            $temp['count'] =  2;
+            $temp['avatar'] = $vo['fromavatar'];
+                
+            $data[] = $temp;
+        }
+
+        return json( ['code' => 0, 'data' => $data, 'num'=>count($data)]);
+    }
+    
+    //对话列表
+    public function getwait()
+    {
+        $kefu_id = input('kefu_id',2);
+        
+        $result = db('chatlog')->where("(toid={$kefu_id}) and type='friend' and needsend=1")
+            ->order('timeline desc')
+            ->group("fromid")
+            ->limit(10)
+            ->select();
+
+        if( empty($result) ){
+            return json( ['code' => 1, 'data' => ''] );
+        }   
+        $last_names = array_column($result,'timeline');
+        array_multisort($last_names,SORT_ASC,$result);
+
+        $data = [];
+        foreach ($result as $vo){
+            
+            $temp['content'] = $vo['content'];
+            $temp['last_timestamp'] = $vo['timeline'];
+            $temp['state']   =  'offline';
+            $temp['c_count'] =  'readed';
+            $temp['channel'] =  '663663230323066383932';
+            $temp['visiter_name'] = $vo['fromname'];
+            $temp['visiter_id'] = $vo['fromid'];
+            $temp['vid'] = $vo['id'];
+            $temp['from_url'] =  'web';
+            $temp['ip'] =  '39.191.197.117';
+            $temp['count'] =  2;
+            $temp['avatar'] = $vo['fromavatar'];
+                
+            $data[] = $temp;
+        }
+
+        return json( ['code' => 0, 'data' => $data, 'num'=>count($data)]);
+    }
+	
+	
     public function list()
     {
         $uname = input('param.token');

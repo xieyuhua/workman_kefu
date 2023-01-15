@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"/www/wwwroot/default/php/after/public/../application/index/view/index/list.html";i:1673661109;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"/www/wwwroot/default/php/after/public/../application/index/view/index/list.html";i:1673694707;}*/ ?>
 <!DOCTYPE html>
 <html>
     
@@ -319,16 +319,16 @@
                 $('.layui-nav-child').css('display', 'block');
             }
         }
-
+        var kefu_id = <?php echo $uinfo['id']; ?>;
+        var kefu_name = <?php echo $uinfo['username']; ?>;
         var wolive_connect = function () {
-            var uinfo = <?php echo $uinfo['id']; ?>;
             //建立WebSocket通讯
             var socket = new WebSocket('ws://api.jiaoyuhua.cn:7273');
             var user_img = "http://api.jiaoyuhua.cn/static/admin/images/a5.jpg";
             //连接成功时触发
         	socket.onopen = function(){
         		// 登录
-                var login_data = '{"type":"init","id":"'+uinfo+'","username":"<?php echo $uinfo['username']; ?>","avatar":"<?php echo $user_img; ?>","sign":"<?php echo $uinfo['sign']; ?>"}';
+                var login_data = '{"type":"init","id":"'+kefu_id+'","username":"<?php echo $uinfo['username']; ?>","avatar":"<?php echo $user_img; ?>","sign":"<?php echo $uinfo['sign']; ?>"}';
                 socket.send(login_data);
                 console.log("websocket握手成功!"); 
         	};
@@ -348,7 +348,7 @@
                     break;
                     // 检测聊天数据
                 case 'chatMessage':
-                    var str = data.message.content;
+                    var str = data.data.content;
                     str.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, function (match, capture) {
                         var pos = capture.lastIndexOf("/");
                         var value = capture.substring(pos + 1);
@@ -360,9 +360,10 @@
                     });
                     str = str.replace(/<div><a[^<>]+>.+?<\/a><\/div>/, '[文件]');
                     str = str.replace(/<img src=['"]([^'"]+)[^>]*>/gi, '[图片]');
-                    $.cookie(data.message.channel, str);
-                    $("#msg" + data.message.channel).html(str);
-                    getchat();
+              
+                    console.log(str);
+                    $("#msg" + data.data.id).html(str);
+                    // getchat();
                     break;
                     // 离线消息推送
                 case 'logMessage':
@@ -383,7 +384,10 @@
             function getwait() {
 
                 $.ajax({
-                    url: "http://yw.azmks.com/?id=getwait",
+                    url: "<?php echo url('index/getwait'); ?>",
+                    data: {
+                        kefu_id:kefu_id
+                    },
                     dataType: 'json',
                     success: function (res) {
 
@@ -432,7 +436,10 @@
 
             function getchat() {
                 $.ajax({
-                    url: "http://yw.azmks.com/?id=getchats",
+                    url: "<?php echo url('index/getchat'); ?>",
+                    data: {
+                        kefu_id:kefu_id
+                    },
                     success: function (res) {
                         $("#chatlist").empty();
 
@@ -456,8 +463,8 @@
                                         a += '<div class="visiter">';
                                         a += '<i class="layui-icon size" title="删除"  onclick="cut(' + "'" + v.visiter_id +
                                             "'" + ')"></i>';
-                                        a += '<a class="visit_content" href="/index/index/chat.html?channel=' + v.channel +
-                                            '&avatar=' + v.avatar + '">';
+                                        a += '<a class="visit_content" href="/index/index/chat.html?token=' + kefu_name +
+                                            '&kefu_id=' + v.visiter_name + '">';
                                         a += '<img class="v-avatar" src="' + v.avatar + '" width="60px" height="60px">';
                                         a += '<span class="c_name">' + v.visiter_name + '</span><div id="msg' + v.visiter_id +
                                             '" class="newmsg">' + v.content + '</div></a>';
@@ -467,8 +474,8 @@
                                         a += '<div class="visiter">';
                                         a += '<i class="layui-icon size" title="删除" onclick="cut(' + "'" + v.visiter_id +
                                             "'" + ')"></i>';
-                                        a += '<a class="visit_content" href="/index/index/chat.html?channel=' + v.channel +
-                                            '&avatar=' + v.avatar + '">';
+                                        a += '<a class="visit_content" href="/index/index/chat.html?token=' + kefu_name +
+                                            '&kefu_id=' + v.visiter_name + '">';
                                         a += '<img class="v-avatar" src="' + v.avatar + '" width="60px" height="60px">';
                                         a += '<span class="c_name">' + v.visiter_name + '</span><div id="msg' + v.visiter_id +
                                             '" class="newmsg">' + v.content + '</div></a>';
@@ -482,8 +489,8 @@
                                         a += '<div class="visiter">';
                                         a += '<i class="layui-icon size" title="删除" onclick="cut(' + "'" + v.visiter_id +
                                             "'" + ')"></i>';
-                                        a += '<a class="visit_content" href="/index/index/chat.html?channel=' + v.channel +
-                                            '&avatar=' + v.avatar + '">';
+                                        a += '<a class="visit_content" href="/index/index/chat.html?token=' + kefu_name +
+                                            '&kefu_id=' + v.visiter_name + '">';
                                         a += '<img class="v-avatar icon_gray" src="' + v.avatar +
                                             '" width="60px" height="60px">';
                                         a += '<span class="c_name">' + v.visiter_name + '</span><div id="msg' + v.visiter_id +
@@ -494,8 +501,8 @@
                                         a += '<div class="visiter">';
                                         a += '<i class="layui-icon size" title="删除"  onclick="cut(' + "'" + v.visiter_id +
                                             "'" + ')"></i>';
-                                        a += '<a class="visit_content" href="/index/index/chat.html?channel=' + v.channel +
-                                            '&avatar=' + v.avatar + '">';
+                                        a += '<a class="visit_content" href="/index/index/chat.html?token=' + kefu_name +
+                                            '&kefu_id=' + v.visiter_name + '">';
                                         a += '<img class="v-avatar icon_gray" src="' + v.avatar +
                                             '" width="60px" height="60px">';
                                         a += '<span class="c_name">' + v.visiter_name + '</span><div id="msg' + v.visiter_id +

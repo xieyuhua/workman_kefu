@@ -13,9 +13,6 @@ Workerman+Layim+TP5简单客服系统
 2、需要修改Workerman数据库配置 vendor/Workerman/Applications/Config/Db.php
 3、确保php已安装pcntl扩展并且未禁用pcntl相关函数
 
-# 关于LayIM
-因为layIM不开源，要是商用的话，建议去http://layim.layui.com  这里，layUI的官网去授权吧  
- 
 
 # 如何运行  
 1、将代码下载到本地，并配置好虚拟域名（基于tp5框架，只要按照tp5框架的配置方式即可）  
@@ -102,6 +99,9 @@ Gateway::getSession($client_id);
 ```
 
 # 效果
+![image](https://user-images.githubusercontent.com/29120060/212464021-c11b75a4-3a85-46fd-ab2d-e985042248e2.png)
+![image](https://user-images.githubusercontent.com/29120060/212464026-9a8a69b2-420f-4d2f-90f5-1f439d906327.png)
+
 ![image](https://github.com/Jing-Bei/after/blob/master/images/01.png)
 ![image](https://github.com/Jing-Bei/after/blob/master/images/02.png)
 ![image](https://github.com/Jing-Bei/after/blob/master/images/03.png)
@@ -111,8 +111,5 @@ Gateway::getSession($client_id);
 ![image](https://github.com/Jing-Bei/after/blob/master/images/07.png)
 ![image](https://github.com/Jing-Bei/after/blob/master/images/08.png)
 
-
-# 预览地址
-http://chat.itsideline.com
 
 
