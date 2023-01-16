@@ -27,10 +27,25 @@ Workerman+Layim+TP5简单客服系统
 
 ```
 您好！请问有什么需要帮助的吗？人工客服在线时间上午9:00—12:00&nbsp; 下午13：30—18:00&nbsp;&nbsp; 其他时间咨询请留言。
-常见问题请点击（勿回数字）：<br><br><div class="question" onclick="getanswer(183)"><span>1. </span> 请点击查看 （多久发货？从哪里发货？）</div><div class="question" onclick="getanswer(184)"><span>2. </span> 请点击查看（怎么自提？怎么选同城配送？）</div><div class="question" onclick="getanswer(185)"><span>3. </span> 请点击查看（售后问题如收到的货有破损、货发错了、质量问题等）</div>
+常见问题请点击（勿回数字）：
+<br><br>
+<div class="question" onclick="getanswer(183)"><span>1. </span> 请点击查看 （多久发货？从哪里发货？）</div>
+<div class="question" onclick="getanswer(184)"><span>2. </span> 请点击查看（怎么自提？怎么选同城配送？）</div>
+<div class="question" onclick="getanswer(185)"><span>3. </span> 请点击查看（售后问题如收到的货有破损、货发错了、质量问题等）</div>
 ```
 ```
-<a href="https://www.azmbk.com/511.html?prescribe_status=0" target="_blank" class="wolive_product"><div class="wolive_img"><img src="/uploads/20230114/381c2825d9d9f20469e7392d04e4040f.jpg" width="100px"></div><div class="wolive_head"><p class="wolive_title">【特价促销】悦而 维生素D滴剂(胶囊型) 36粒/盒<span class="wolive_price">69.00</span></p><p></p><p class="wolive_info">预防治疗维生素D缺乏缺失</p></div></a>
+<a href="https://www.azmbk.com/511.html?prescribe_status=0" target="_blank" class="wolive_product">
+	<div class="wolive_img">
+	<img src="/uploads/20230114/381c2825d9d9f20469e7392d04e4040f.jpg" width="100px">
+</div>
+	<div class="wolive_head">
+		<p class="wolive_title">【特价促销】悦而 维生素D滴剂(胶囊型) 36粒/盒
+			<span class="wolive_price">69.00</span>
+		</p>
+		<p></p>
+		<p class="wolive_info">预防治疗维生素D缺乏缺失</p>
+	</div>
+</a>
 ```
 
 ## 安装
