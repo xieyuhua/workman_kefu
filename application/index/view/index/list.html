@@ -280,11 +280,12 @@
 			</span>
             </div>
             <div style="background: #fbfbfb; height: 110px;"></div>
-            <section id="chatlist" style="overflow-y: auto;">
+            <section id="chatlist" style="overflow-y: auto;overflow-y: auto;">
                 <div class="no-list">
                     <img src="/ws/bg_empty_data.png"  alt="">
                     <p>暂时没有询问的哦~</p>
                 </div>
+                <b id="ddd"></b>
             </section>
             <section id="waitlist" style="overflow-y: auto; display: none;">
                 <!-- 排队列表中没有内容时 -->
@@ -295,7 +296,21 @@
             </section>
         </section>
         <script>
-      
+        
+        
+        window.onscroll = function () {
+            var  t = document.documentElement.scrollTop || document.body.scrollTop;
+            var  h =  document.documentElement.clientHeight;
+            var sh = document.documentElement.scrollHeight;
+            
+            if ((t+h) == sh) {
+                if ($.cookie("visiter_id") != "") {
+                    console.log(t);
+                    getchat();
+                }
+            }
+        }
+        
         var choose = function (obj) {
             $(obj).addClass("onclick");
             $(obj).siblings().removeClass('onclick');
@@ -431,13 +446,21 @@
                 });
             }
 
-            // 对话列表
 
+
+            // 对话列表
             function getchat() {
+                if ($.cookie("visiter_id") != "") {
+                    var visiter_id = $.cookie("visiter_id");
+                } else {
+                    var visiter_id = "";
+
+                }
                 $.ajax({
                     url: "{:url('index/getchat')}",
                     data: {
-                        kefu_id:kefu_id
+                        kefu_id:kefu_id,
+                        visiter_id: visiter_id
                     },
                     success: function (res) {
                         $("#chatlist").empty();
@@ -513,6 +536,11 @@
                                 }
 
                             });
+                            
+                            if (res.data.length > 2) {
+                                $.cookie("visiter_id", res.data[0]['visiter_id']);
+                            }
+                            
                             $("#chatlist").append(a);
                         }
                     }

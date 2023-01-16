@@ -36,10 +36,19 @@ class Index extends Controller
     public function getchat()
     {
         $kefu_id = input('kefu_id',1);
-        
-        $result = db('chatlog')->field("*")->where("toid={$kefu_id} and type='friend' and needsend=0 and id IN (SELECT MAX(id) FROM after_chatlog GROUP BY fromid)")
-            ->order('id desc')
-            ->select();
+        $cid = intval(input('visiter_id', 0));
+        if(empty($cid)){
+            $result = db('chatlog')->field("*")->where("toid={$kefu_id} and type='friend' and needsend=0 and id IN (SELECT MAX(id) FROM after_chatlog where id<{$cid} GROUP BY fromid)")
+                ->order('id desc')
+                ->limit(2)
+                ->select();
+        }else{
+            $result = db('chatlog')->field("*")->where("toid={$kefu_id} and type='friend' and needsend=0 and id IN (SELECT MAX(id) FROM after_chatlog GROUP BY fromid)")
+                ->order('id desc')
+                ->limit(2)
+                ->select();
+        }
+
 
         if( empty($result) ){
             return json( ['code' => 1, 'data' => ''] );
@@ -49,17 +58,18 @@ class Index extends Controller
             
             $temp['content'] = $vo['content'];
             $temp['last_timestamp'] = $vo['timeline'];
-            $temp['state']   =  'offline';
-            $temp['c_count'] =  'readed';
-            $temp['channel'] =  '663663230323066383932';
+            $temp['state']   =  'online';//online  offline
             $temp['visiter_name'] = $vo['fromname'];
             $temp['visiter_id'] = $vo['fromid'];
             $temp['vid'] = $vo['id'];
             $temp['from_url'] =  'web';
             $temp['ip'] =  '39.191.197.117';
-            $temp['count'] =  2;
+            $temp['count'] =  0;
             $temp['avatar'] = $vo['fromavatar'];
                 
+            $data[] = $temp;
+            // $data[] = $temp;
+            $data[] = $temp;
             $data[] = $temp;
         }
 
