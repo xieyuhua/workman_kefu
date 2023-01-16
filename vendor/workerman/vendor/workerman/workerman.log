@@ -259,3 +259,5 @@ Stack trace:
 2023-01-14 10:46:01 pid:833783 Workerman[vendor/workerman/start.php] already running
 2023-01-14 10:46:04 pid:833802 Workerman[vendor/workerman/start.php] status 
 2023-01-14 13:50:31 pid:833737 Bad request for Register service. Request info(IP:152.89.196.122, Request Buffer:  /*‡     Cookie: mstshash=Administr). See http://wiki.workerman.net/Error4 for detail
+2023-01-15 18:14:01 pid:833737 Bad request for Register service. Request info(IP:198.98.60.196, Request Buffer:GET / HTTP/1.1). See http://wiki.workerman.net/Error4 for detail
+2023-01-15 18:14:01 pid:833737 Bad request for Register service. Request info(IP:198.98.60.196, Request Buffer: Ó  Íœ€*D:°ı‹êZf<êò(È‡]≈oæà›î JìñÒ“Óπåc@¶Mù#q›…µ3”=2:V9íòÇé¥} &¿+¿/¿,¿0Ã©Ã®¿	¿¿). See http://wiki.workerman.net/Error4 for detail
