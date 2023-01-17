@@ -262,3 +262,8 @@ Stack trace:
 2023-01-15 18:14:01 pid:833737 Bad request for Register service. Request info(IP:198.98.60.196, Request Buffer:GET / HTTP/1.1). See http://wiki.workerman.net/Error4 for detail
 2023-01-15 18:14:01 pid:833737 Bad request for Register service. Request info(IP:198.98.60.196, Request Buffer: Ó  Íœ€*D:°ı‹êZf<êò(È‡]≈oæà›î JìñÒ“Óπåc@¶Mù#q›…µ3”=2:V9íòÇé¥} &¿+¿/¿,¿0Ã©Ã®¿	¿¿). See http://wiki.workerman.net/Error4 for detail
 2023-01-16 11:07:22 pid:833737 Bad request for Register service. Request info(IP:47.92.78.77, Request Buffer:  ˛wfÛæì{íi,ç,‘iéËUÃÚuI ˚åßØÕ‚ËÊ  V¿,¿+¿0¿/ ü £ û ¢¿$¿(¿#¿' k j g @¿.¿2¿-¿1¿&¿*¿%¿)¿). See http://wiki.workerman.net/Error4 for detail
+2023-01-16 17:12:55 pid:903996 Workerman[vendor/workerman/start.php] start in DEBUG mode
+2023-01-16 17:14:41 pid:903996 Workerman[start.php] stopping ...
+2023-01-16 17:14:41 pid:903996 Workerman[start.php] has been stopped
+2023-01-16 17:14:45 pid:904060 Workerman[vendor/workerman/start.php] start in DAEMON mode
+2023-01-16 19:09:04 pid:904071 Register auth timeout (170.64.180.211). See http://wiki.workerman.net/Error4 for detail

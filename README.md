@@ -25,6 +25,7 @@ Workerman+Layim+TP5简单客服系统
 
 5、访问聊天系统，进入前台，注册新用户登录即可聊天。 请用两个浏览器打开，登录不同的账户互相聊天。后台默认账号是admin，密码admin  
 
+6、常见问题
 ```
 您好！请问有什么需要帮助的吗？人工客服在线时间上午9:00—12:00&nbsp; 下午13：30—18:00&nbsp;&nbsp; 其他时间咨询请留言。
 常见问题请点击（勿回数字）：
@@ -33,6 +34,7 @@ Workerman+Layim+TP5简单客服系统
 <div class="question" onclick="getanswer(184)"><span>2. </span> 请点击查看（怎么自提？怎么选同城配送？）</div>
 <div class="question" onclick="getanswer(185)"><span>3. </span> 请点击查看（售后问题如收到的货有破损、货发错了、质量问题等）</div>
 ```
+7、商品信息卡片
 ```
 <a href="https://www.azmbk.com/511.html?prescribe_status=0" target="_blank" class="wolive_product">
 	<div class="wolive_img">
@@ -47,6 +49,37 @@ Workerman+Layim+TP5简单客服系统
 	</div>
 </a>
 ```
+
+8、小程序跳转
+```
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script type="text/javascript">
+	$('body').on('click','.wolive_product',function(){
+		//判断是否允许跳转
+		//如果带有goods_href类，说明需要判断是否跳转小程序
+		if ($(this).hasClass('goods_href')) {
+			var mini_program_url = $(this).data('mini_program_url');
+			var url = $(this).data('url');
+			var ua = navigator.userAgent.toLowerCase();
+			if(ua.match(/MicroMessenger/i)=="micromessenger") {
+				//ios的ua中无miniProgram，但都有MicroMessenger（表示是微信浏览器）
+				wx.miniProgram.getEnv((res)=>{
+					if (res.miniprogram) {
+						wx.miniProgram.navigateTo({
+							url: mini_program_url,
+						});
+						return false;
+					}
+				})
+			} else {
+				window.location.href=url;
+				return false;
+			}
+		}
+	})
+</script>
+```
+
 
 ## 安装
 **方法一**

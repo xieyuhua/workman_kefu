@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"/www/wwwroot/default/php/after/public/../application/index/view/index/chat.html";i:1673847372;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"/www/wwwroot/default/php/after/public/../application/index/view/index/chat.html";i:1673863000;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
     
